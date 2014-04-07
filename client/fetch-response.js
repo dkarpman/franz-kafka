@@ -23,8 +23,6 @@ module.exports = function (
 		this.bytesParsed = 0
 		var blen = this.buffer.length
 		while (this.bytesParsed + 4 <= blen) {
-			console.log("bytes parsed = ", this.bytesParsed);
-			console.log("blen         = ", blen);
 			this.lastMessageLength = this.buffer.readUInt32BE(this.bytesParsed)
 			var end = this.bytesParsed + this.lastMessageLength + 4
 			if (end > blen) {
